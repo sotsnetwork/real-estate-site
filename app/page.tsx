@@ -49,7 +49,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/home%20v.jpg-rxnX7mys6JuAm5Bl56jYtHDucXciNT.jpeg')",
+            backgroundImage: "url('/realestate hero.jpeg')",
           }}
         />
         <div className="absolute inset-0 bg-black/50" />
