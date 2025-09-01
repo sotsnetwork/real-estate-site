@@ -47,9 +47,12 @@ export default function HomePage() {
         className="relative h-screen flex items-center justify-center"
       >
         <div
-          className="absolute inset-0 bg-cover bg-center-bottom"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: "url('/mansion house.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat"
           }}
         />
         <div className="absolute inset-0 bg-black/50" />
