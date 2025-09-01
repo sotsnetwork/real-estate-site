@@ -64,7 +64,9 @@ export function Navbar() {
             >
               Testimonials
             </button>
-            <Button>Contact Us</Button>
+            <Link href="/contact">
+              <Button>Contact Us</Button>
+            </Link>
           </div>
 
           {/* Mobile Navigation Toggle */}
@@ -105,7 +107,9 @@ export function Navbar() {
               >
                 Testimonials
               </button>
-              <Button className="w-full">Contact Us</Button>
+              <Link href="/contact" className="w-full">
+                <Button className="w-full">Contact Us</Button>
+              </Link>
             </div>
           </div>
         )}
