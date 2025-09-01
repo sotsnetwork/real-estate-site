@@ -47,7 +47,7 @@ export default function HomePage() {
         className="relative h-screen flex items-center justify-center"
       >
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center-bottom"
           style={{
             backgroundImage: "url('/realestate hero.jpeg')",
           }}
