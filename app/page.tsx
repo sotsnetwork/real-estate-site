@@ -49,7 +49,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center-bottom"
           style={{
-            backgroundImage: "url('/realestate hero.jpeg')",
+            backgroundImage: "url('/mansion house.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-black/50" />
