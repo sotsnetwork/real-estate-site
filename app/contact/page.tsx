@@ -61,13 +61,13 @@ export default function ContactPage() {
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
-        className="relative pt-32 pb-20 bg-gradient-to-br from-blue-50 to-indigo-100"
+        className="relative pt-32 pb-16 bg-gradient-to-br from-blue-50 to-indigo-100"
       >
         <div className="container mx-auto px-4">
-          <motion.div variants={fadeInUp} className="text-center mb-16">
+          <motion.div variants={fadeInUp} className="text-center">
             <Link 
               href="/" 
-              className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-6"
+              className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-8 text-sm"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
@@ -75,7 +75,7 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
               Get In Touch
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Ready to find your dream home? Our team of real estate experts is here to help you every step of the way.
             </p>
           </motion.div>
@@ -87,20 +87,23 @@ export default function ContactPage() {
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
-        className="py-20"
+        className="py-16 -mt-8"
       >
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-12 xl:gap-20">
             {/* Contact Form */}
-            <motion.div variants={fadeInUp}>
-              <Card className="p-8 shadow-xl">
+            <motion.div variants={fadeInUp} className="order-2 lg:order-1">
+              <Card className="p-8 shadow-xl border-0">
                 <CardContent className="p-0">
-                  <h2 className="text-3xl font-bold mb-8 text-gray-900">Send us a Message</h2>
+                  <h2 className="text-2xl font-bold mb-6 text-gray-900">Send us a Message</h2>
+                  <p className="text-gray-600 mb-8">
+                    Fill out the form below and we'll get back to you within 24 hours.
+                  </p>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                          Full Name
+                          Full Name *
                         </label>
                         <Input
                           id="name"
@@ -115,7 +118,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                          Email Address
+                          Email Address *
                         </label>
                         <Input
                           id="email"
@@ -146,7 +149,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                          Subject
+                          Subject *
                         </label>
                         <Input
                           id="subject"
@@ -162,7 +165,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                        Message
+                        Message *
                       </label>
                       <textarea
                         id="message"
@@ -170,7 +173,7 @@ export default function ContactPage() {
                         required
                         value={formData.message}
                         onChange={handleChange}
-                        rows={6}
+                        rows={5}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                         placeholder="Tell us more about what you're looking for..."
                       />
@@ -185,70 +188,82 @@ export default function ContactPage() {
             </motion.div>
 
             {/* Contact Information */}
-            <motion.div variants={fadeInUp} className="space-y-8">
+            <motion.div variants={fadeInUp} className="order-1 lg:order-2 space-y-8">
               <div>
-                <h2 className="text-3xl font-bold mb-8 text-gray-900">Contact Information</h2>
-                <p className="text-lg text-gray-600 mb-8">
+                <h2 className="text-2xl font-bold mb-4 text-gray-900">Contact Information</h2>
+                <p className="text-gray-600 mb-8 leading-relaxed">
                   We're here to help you find the perfect property. Reach out to us through any of these channels.
                 </p>
               </div>
 
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <Mail className="w-6 h-6 text-primary" />
+              <div className="space-y-8">
+                <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                  <div className="bg-primary/10 p-3 rounded-full flex-shrink-0">
+                    <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Email Us</h3>
-                    <p className="text-gray-600">info@realestate.com</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Email Us</h3>
+                    <p className="text-gray-600 mb-1">info@realestate.com</p>
                     <p className="text-gray-600">support@realestate.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <Phone className="w-6 h-6 text-primary" />
+                <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                  <div className="bg-primary/10 p-3 rounded-full flex-shrink-0">
+                    <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Call Us</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Call Us</h3>
+                    <p className="text-gray-600 mb-1">+1 (555) 123-4567</p>
                     <p className="text-gray-600">+1 (555) 987-6543</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <MapPin className="w-6 h-6 text-primary" />
+                <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                  <div className="bg-primary/10 p-3 rounded-full flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Visit Us</h3>
-                    <p className="text-gray-600">123 Real Estate Blvd</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Visit Us</h3>
+                    <p className="text-gray-600 mb-1">123 Real Estate Blvd</p>
                     <p className="text-gray-600">Beverly Hills, CA 90210</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <Clock className="w-6 h-6 text-primary" />
+                <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                  <div className="bg-primary/10 p-3 rounded-full flex-shrink-0">
+                    <Clock className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
-                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Business Hours</h3>
+                    <p className="text-gray-600 mb-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p className="text-gray-600 mb-1">Saturday: 10:00 AM - 4:00 PM</p>
                     <p className="text-gray-600">Sunday: Closed</p>
                   </div>
                 </div>
               </div>
 
               {/* Additional Info */}
-              <Card className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50">
+              <Card className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-0">
                 <CardContent className="p-0">
-                  <h3 className="font-semibold text-gray-900 mb-3">Why Choose Us?</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• 20+ years of real estate experience</li>
-                    <li>• Personalized service for every client</li>
-                    <li>• Extensive knowledge of local markets</li>
-                    <li>• 24/7 support for urgent inquiries</li>
+                  <h3 className="font-semibold text-gray-900 mb-4">Why Choose Us?</h3>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">•</span>
+                      20+ years of real estate experience
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">•</span>
+                      Personalized service for every client
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">•</span>
+                      Extensive knowledge of local markets
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">•</span>
+                      24/7 support for urgent inquiries
+                    </li>
                   </ul>
                 </CardContent>
               </Card>
